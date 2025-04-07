@@ -1,0 +1,125 @@
+@import url('https://fonts.cdnfonts.com/css/amiga-forever');
+
+body {
+    background-image: url("../imagens/plano-de-fundo.avif");
+    background-size: cover;
+    background-color: #3070ac;
+    color: white;
+    font-family: 'Amiga Forever', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.navbar {
+    position: relative;
+    background-color: #06719f;
+    padding: 10px 0;
+    top: 0%;
+    width: 99.60%;
+    text-align: center;
+    font-family: 'Amiga Forever', sans-serif;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+.navbar ul li .forca {
+    font-size: 25px;
+    font-weight: bold;
+}
+.navbar ul .inicio {
+    top: 3%;
+    position: relative;
+    right: 28%;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navbar ul .reiniciar {
+    top: 3%;
+    position: relative;
+    left: 28%;
+    font-size: 14px;
+    font-weight: bold;
+}
+.botao {
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Amiga Forever', sans-serif;
+}
+
+.erros-container {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Amiga Forever', sans-serif;
+}
+
+.palavra-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: 'Amiga Forever', sans-serif;
+}
+
+.mostrar {
+    width: 40px;
+    height: 50px;
+    border-bottom: 2px solid white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Amiga Forever', sans-serif;
+}
+
+.teclado-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px;
+    margin-top: 20px;
+    background-color: #064e74a5;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Amiga Forever', sans-serif;
+}
+
+.key {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #0986a2;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Amiga Forever', sans-serif;
+    
+}
+
+.key:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}

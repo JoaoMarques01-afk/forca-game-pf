@@ -52,15 +52,6 @@ const verificarLetra = (letra, botao) => {  // Declara a função que verifica s
     mostrarPalavra();                       // Atualiza a exibição da palavra na tela
     verificarFimDeJogo();                   // Checa se o jogo terminou (vitória ou derrota)
 }
-const reiniciarJogo = () => {  // Declara a função que reinicia o jogo
-    palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];  // Escolhe uma nova palavra aleatória
-    tentativas = 6;  // Reseta o número de tentativas para 6
-    letrasCorretas = Array(palavraSecreta.length).fill("_");  // Cria um array com underlines 
-
-    document.getElementById("erros").textContent = "0";  // Zera o contador de erros na tela
-    criarTeclado();  // Recria os botões do teclado (reativa todos)
-    mostrarPalavra();  // Atualiza a exibição da palavra (mostra os underlines iniciais)
-}
 
 // criando uma variavel para controlar quando o jogo terminar
 let jogoEncerrado = false;
@@ -79,6 +70,15 @@ const verificarFimDeJogo = () => {
         //se o jogador ganhou o settimeout vai  dar um alerta a partir de 200 milissegundos com a mensagem do codigo
         setTimeout(() => alert(`Fim de jogo! A palavra era ${palavraSecreta}`), 200);
     }
+}
+const reiniciarJogo = () => {  // Declara a função que reinicia o jogo
+    palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];  // Escolhe uma nova palavra aleatória
+    tentativas = 6;  // Reseta o número de tentativas para 6
+    letrasCorretas = Array(palavraSecreta.length).fill("_");  // Cria um array com underlines 
+
+    document.getElementById("erros").textContent = "0";  // Zera o contador de erros na tela
+    criarTeclado();  // Recria os botões do teclado (reativa todos)
+    mostrarPalavra();  // Atualiza a exibição da palavra (mostra os underlines iniciais)
 }
 
 // inicia o jogo

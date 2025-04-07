@@ -27,7 +27,7 @@ const mostrarPalavra = () =>{
 
 //cria o teclado na tela
 const criarTeclado = () => {
-    const tecladoLayout = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    const tecladoLayout = "ABCDEFGHIJKLÇMNOPQRSTUVWXYZ".split("");
     const teclado = document.getElementById("teclado");
     teclado.innerHTML = "";
     //cria os elementos/teclas do teclado virtual

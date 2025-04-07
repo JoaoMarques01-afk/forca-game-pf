@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forca</title>
+    <link rel="stylesheet" href="../css/partida.css">
+    <link rel="shortcut icon" href="../imagens/forca.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+      <ul>
+        <li class="inicio">
+          <button class="botao" onclick="window.location.href = '../html/inicio.html'">
+            <img width="25px" src="../imagens/house-fill.svg" alt="ampulheta">
+          </button>
+        </li>
+        <li><a class="forca" href="#">Jogo da Forca</a></li>
+        <li class="reiniciar">
+          <button class="botao" onclick="reiniciarJogo()">
+            <img width="25px" src="../imagens/arrow-repeat.svg" alt="ampulheta">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+  <div class="container">
+    <img src="../imagens/logo-partida.png" class="game-logo" height="80px" alt="Jogo da Forca">
+
+      <!-- Área da Forca -->
+      <div class="erros-container">
+          <p>Erros: <span id="erros">0</span>/6</p>
+      </div>
+
+      <!-- Palavra Oculta -->
+      <div class="palavra-container" id="palavra-container"></div>
+
+      <!-- Teclado Virtual -->
+      <div class="teclado-container" id="teclado"></div>
+  </div>
+
+  <script src="../js/partida.js"></script>
+</body>
+</html>

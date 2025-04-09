@@ -1,8 +1,15 @@
-@import url('https://fonts.cdnfonts.com/css/amiga-forever'); /* importando a fonte personalizada "amiga-forever" */
+/*Torna a fonte Amiga Forever disponível offline, ou seja, ela é baixada em .ttf ou .woff tornando ela local*/
+@font-face {
+    font-family: 'Amiga Forever';
+    src: url('../fonte/amiga4ever.ttf') format('truetype');
+}
 
-/* criando do corpo da página */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url("../imagens/plano-de-fundo.avif");/* define a imagem de fundo */
+    background-image: url("../imagens/plano-de-fundo.avif");
     background-size: cover;
     background-color: #3070ac;
     color: white;
@@ -14,7 +21,6 @@ body {
     font-family: 'Amiga Forever', sans-serif;
 }
 
-/* criando o corpo da área principal */
 main {
   display: flex;
   flex-direction: column;
@@ -23,11 +29,59 @@ main {
   position: relative;
   overflow: hidden;
 }
-/* definindo um espaçamento para o logo */
+
+/*Aplicação de responsividade para plataforma mobile*/
+@media screen and (max-width: 768px) {
+    .menu {
+      margin-top: 0;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .home-container {
+      padding: 20px;
+      width: 90%;
+      max-width: 100%;
+    }
+  
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-left: 0;
+    }
+  
+    button {
+      width: 100%;
+      font-size: 18px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+  
+    .creditos, .tutorial {
+      width: 90%;
+      height: auto;
+      max-height: 80%;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+  
+    .creditos div:nth-of-type(2) div,
+    .tutorial div:nth-of-type(2) div {
+      padding: 15px;
+      font-size: 14px;
+    }
+  
+    .game-logo {
+      width: 80%;
+      height: auto;
+    }
+}
+  
+
 .game-logo {
     margin-top: 2%;
 }
-/* adcionando as funcionabilidades do menu principal */
+
 .menu {
     display: flex;
     margin-top: -14%;
@@ -35,17 +89,18 @@ main {
     align-items: center;
     height: 100vh;
 }
-/* definindo os padrões para os containers */
+
 .home-container {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 40px;
     max-width: 700px;
     border-radius: 10px;
     border: 2px solid white;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Amiga Forever', sans-serif;
 }
-/* definindo os padrões para o titulo principal e os estilos também  */
+
 h1 {
     position: relative;
     font-size: 30px;
@@ -54,12 +109,12 @@ h1 {
     margin-left: 12%;
     font-family: 'Amiga Forever', sans-serif;
 }
-/* arrumando os tamanhos dos paragrafos de texto */
+
 p {
     font-size: 18px;
     margin-bottom: 20px;
 }
-/* definindo as especificações dos botões */
+
 button {
     background-color: #00e1ff;
     margin-top: 10%;
@@ -70,11 +125,15 @@ button {
     font-weight: bold;
     color: black;
     cursor: pointer;
+    border-radius: 5px;
     transition: 0.3s;
     font-family: 'Amiga Forever', sans-serif;
 }
 
-/*Escurece o fundo da página para destacar conteúdos na frente (como pop-ups ou menus).*/
+button:hover {
+    background-color: #0d2a29;
+}
+
 .fundo-preto {
     position: absolute;
     width: 100%;
@@ -85,14 +144,11 @@ button {
     visibility: hidden;
 }
 
-/*Ativa o overlay escuro, tornando-o visível com fade-in de 1s para destacar conteúdo prioritário.*/
 .ativado {
     opacity: 1;
     visibility: visible;
 }
 
-/*Define uma janela de créditos estilizada que fica inicialmente oculta 
-à direita (fora da tela) e aparece com animação suave de 1s quando ativada.*/
 .creditos {
     position: absolute;
     width: 600px;
@@ -109,19 +165,15 @@ button {
     z-index: 1;
 
 }
-
-/*Define um espaçamento de 10px abaixo de cada item (<li>) dentro da seção de créditos.*/
 .creditos li {
     margin-bottom: 10px;
 }
 
-/*Aplica um espaçamento interno horizontal de 40px e remove margem superior no segundo <div> dentro da seção de créditos.*/
 .creditos div:nth-of-type(2) {
     padding-inline: 40px;
     margin-top: 0%;
 }
 
-/*Cria uma caixa de texto rolável com fundo escuro, fonte pequena e espaçamento interno para exibir conteúdo extenso nos créditos.*/
 .creditos div:nth-of-type(2) div {
     font-size: 12px;
     padding: 25px;
@@ -130,27 +182,23 @@ button {
     overflow: auto;
 }
 
-/*Ajusta listas (<ul>) nos créditos.*/
 .creditos ul {
     margin-top: 10px;
     margin-bottom: 40px;
     color: rgb(22, 172, 236);
 }
 
-/*Estiliza textos de descrição (.texto-sobre) nos créditos.*/
 .creditos .texto-sobre {
     color: rgb(65, 174, 196);
     margin-top: 10px;
 }
 
-/*Faz a janela de créditos aparecer, centralizar na tela e ficar clicável com animação suave.*/
 .creditos-ativado {
 pointer-events: auto !important;
 opacity: 1;
 transform: translateX(0px);
 }
 
-/*Cria um botão para fechar a janela de créditos, com ícone "X" grande (30px) e sem margem superior.*/
 .voltar-creditos {
     width: 40px;
     height: 40px;
@@ -159,7 +207,6 @@ transform: translateX(0px);
     margin-top: 0;
 }
 
-/*Estiliza o "X" do botão de voltar.*/
 .voltar-creditos p {
     transform: rotate(45deg);
     color: white;
@@ -167,8 +214,6 @@ transform: translateX(0px);
     margin-top: 0%;
 }
 
-/*Cria uma janela de tutorial estilizada que fica inicialmente 
-oculta à direita e aparece com animação suave de 1s quando ativada.*/
 .tutorial {
     position: absolute;
     width: 600px;
@@ -185,19 +230,15 @@ oculta à direita e aparece com animação suave de 1s quando ativada.*/
     z-index: 1;
 
 }
-
-/*Adiciona um espaçamento de 10px abaixo de cada item da lista no tutorial para melhor organização visual.*/
 .tutorial li {
     margin-bottom: 10px;
 }
 
-/*Ajusta o segundo div do tutorial com 40px de padding lateral e remove a margem superior.*/
 .tutorial div:nth-of-type(2) {
     padding-inline: 40px;
     margin-top: 0%;
 }
 
-/*Cria uma caixa rolável com fundo escuro, texto pequeno e espaçamento interno para conteúdo extenso no tutorial.*/
 .tutorial div:nth-of-type(2) div {
     font-size: 12px;
     padding: 25px;
@@ -206,27 +247,23 @@ oculta à direita e aparece com animação suave de 1s quando ativada.*/
     overflow: auto;
 }
 
-/*Ajusta listas no tutorial com margens (10px topo, 40px base).*/
 .tutorial ul {
     margin-top: 10px;
     margin-bottom: 40px;
     color: rgb(22, 172, 236);
 }
 
-/*Define textos explicativos no tutorial.*/
 .tutorial .texto-sobre {
     color: rgb(65, 174, 196);
     margin-top: 10px;
 }
 
-/*Ativa o tutorial, tornando-o visível, centralizado e interativo com animação suave.*/
 .tutorial-ativado {
 pointer-events: auto !important;
 opacity: 1;
 transform: translateX(0px);
 }
 
-/*Cria botão de fechar para o tutorial.*/
 .voltar-tutorial {
     width: 40px;
     height: 40px;
@@ -235,11 +272,9 @@ transform: translateX(0px);
     margin-top: 0;
 }
 
-/*Cria um ícone de fechar estilizado sem usar imagens.*/
 .voltar-tutorial p {
     transform: rotate(45deg);
     color: white;
     user-select: none;
     margin-top: 0%;
 }
-

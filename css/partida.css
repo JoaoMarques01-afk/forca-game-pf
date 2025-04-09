@@ -1,7 +1,15 @@
-/*importando a fonte das letras*/
-@import url('https://fonts.cdnfonts.com/css/amiga-forever');
+/*Torna a fonte Amiga Forever disponível offline, ou seja, ela é baixada em .ttf tornando ela local*/
+@font-face {
+    font-family: 'Amiga Forever';
+    src: url('../fonte/amiga4ever.ttf') format('truetype');
+}
+  
 
-/*criando o corpo/design da página*/
+* {
+    box-sizing: border-box;
+}
+  
+
 body {
     background-image: url("../imagens/plano-de-fundo.avif");
     background-size: cover;
@@ -12,7 +20,6 @@ body {
     margin: 0;
 }
 
-/*adicionando cor e posicionamento da Nav*/
 .navbar {
     position: relative;
     background-color: #06719f;
@@ -25,7 +32,6 @@ body {
     border-radius: 20px;
 }
 
-/*adicionando formato e posicionamento dos componentes da Nav*/
 .navbar ul {
     list-style: none;
     padding: 0;
@@ -59,14 +65,76 @@ body {
     font-size: 14px;
     font-weight: bold;
 }
-
-/*editando formato dos botões*/
 .botao {
     border: 3px solid rgb(0, 0, 0);
     border-radius: 20px;
 }
 
-/*formato e posicionamento do container principal*/
+/*Aplicação de responsividade para plataforma mobile*/
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .navbar ul .inicio {
+        order: 1;
+    }
+
+    .navbar ul .reiniciar {
+        order: 3;
+    }
+
+    .navbar ul .forca {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        order: 2;
+        font-size: 18px;
+    }
+
+    .botao img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .palavra-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .mostrar {
+        width: 30px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .teclado-container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .key {
+        touch-action: manipulation;
+        padding: 10px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+}
+  
 .container {
     display: flex;
     flex-direction: column;
@@ -75,14 +143,12 @@ body {
     font-family: 'Amiga Forever', sans-serif;
 }
 
-/*adicionado tamanho da letra e fonte da letra da funcionalidade de tentativas*/
 .erros-container {
     font-size: 20px;
     margin-bottom: 20px;
     font-family: 'Amiga Forever', sans-serif;
 }
 
-/*adicionado posicionamento e fonte da letra da funcionalidade de tentativas*/
 .palavra-container {
     display: flex;
     gap: 10px;
@@ -90,7 +156,6 @@ body {
     font-family: 'Amiga Forever', sans-serif;
 }
 
-/*tamanho, formato e fonte das letras do container onde se encontra a palavra oculta*/
 .mostrar {
     width: 40px;
     height: 50px;
@@ -100,7 +165,7 @@ body {
     font-weight: bold;
     font-family: 'Amiga Forever', sans-serif;
 }
-/*tamanho, formator, alinhamento, fonte das letras e cor do container onde as teclas do teclado iram ficar*/
+
 .teclado-container {
     display: flex;
     flex-wrap: wrap;
@@ -112,7 +177,7 @@ body {
     border-radius: 10px;
     font-family: 'Amiga Forever', sans-serif;
 }
-/*tamanho, formato, cor, tipo de cursor e fonte da letras das teclas do teclado virtual*/
+
 .key {
     width: 30px;
     height: 30px;
@@ -133,3 +198,4 @@ body {
     background-color: gray;
     cursor: not-allowed;
 }
+

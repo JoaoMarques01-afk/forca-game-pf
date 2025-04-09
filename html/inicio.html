@@ -1,52 +1,30 @@
 <!DOCTYPE html>
-<!-- definindo o idioma da página como português do Brasil -->
 <html lang="pt-br">
-
 <head>
-    <!-- definindo como UTF-8 para que aceite acentuação -->
     <meta charset="UTF-8">
-  
-    <!-- faz com que o layout se adapte a mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jogo da Forca</title>
-  
-    <!-- trazendo o arquivo CSS externo -->
     <link rel="stylesheet" href="../css/home.css">
-  
-    <!-- definindo icone -->
     <link rel="shortcut icon" href="../imagens/forca.png" type="image/x-icon">
 </head>
-
 <body>
-<main>
-  <!-- Área principal da página -->
-
+  <main>
   <img src="../imagens/logo-partida.png" class="game-logo" height="270px" alt="Fruit Brainiac Showdown">
-
   <div class="menu">
     <div class="home-container">
         <h1>Jogo da Forca</h1>
-
-        <!-- criando o botão que inicia o jogo -->
         <button onclick="iniciarJogo()">JOGAR</button>
-
-        <!-- criando o botão que exibe o tutorial -->
         <button class="botao" onclick="botaoTutorial()">TUTORIAL</button>
-
-        <!-- criando o botão que exibe os créditos -->
         <button class="botao" onclick="botaoCreditos()">CRÉDITOS</button>
     </div>
   </div>
 
   <div class="creditos">
     <div>
-      <!-- criando o botão que volta ao menu a partir da seção de créditos -->
       <button onclick="botaoCreditos()" class="voltar-creditos">
         <p>+</p>
       </button>
     </div>
-
     <div>
       <div>
         <p>Desenvolvido por:</p>
@@ -55,57 +33,74 @@
           <li>João Marques Alves</li>
           <li>Marcos Firmino Cruz dos Santos</li>
         </ul>
-
         <p>Sobre o projeto:</p>
-        <p class="texto-sobre">
-          Este projeto é uma versão digital do clássico Jogo da Forca, onde o jogador 
-          deve adivinhar uma palavra secreta antes que suas tentativas se esgotem. [...]
+        <p class="texto-sobre">Este projeto é uma versão digital do clássico Jogo da Forca, onde o jogador 
+          deve adivinhar uma palavra secreta antes que suas tentativas se esgotem. O objetivo do jogador é adivinhar 
+          a palavra secreta antes de cometer seis erros. A cada erro, o contador aumenta e, se atingir o limite, o 
+          jogo termina. Se o jogador acertar todas as letras antes disso, ele vence a partida!
         </p>
       </div>
     </div>
   </div>
 
-  <!-- seção de Tutorial (também escondida inicialmente) -->
   <div class="tutorial">
     <div>
-      <!-- criando o botão que voltar ao menu a partir do tutorial -->
       <button onclick="botaoTutorial()" class="voltar-tutorial">
         <p>+</p>
       </button>
     </div>
-
     <div>
       <div>
         <p>Tutorial:</p>
-
-        <!-- Explicando o objetivo, regras e instruções do jogo -->
         <p>📌 Objetivo do Jogo:</p>
-        <p class="texto-sobre">O objetivo do Jogo da Forca é adivinhar a palavra secreta antes de atingir 6 erros. [...]</p>
-
-        <p>📖 Regras do Jogo:</p>
-        <p class="texto-sobre">1️⃣ A palavra secreta é exibida como traços (_ _ _ _ _)...</p>
-        
-        <p>🎮 Como Jogar Passo a Passo:</p>
-        <p class="texto-sobre">1️⃣ Iniciar o jogo</p>
-        <p class="texto-sobre">Acesse o jogo e clique no botão "Iniciar Jogo" na tela inicial.</p>
-
+        <p class="texto-sobre">O objetivo do Jogo da Forca é adivinhar a palavra secreta antes de atingir 6 erros. Para isso, você deve escolher letras e formar a palavra correta.</p>
+        <p >📖 Regras do Jogo:</p>
+        <p class="texto-sobre">  1️⃣ A palavra secreta é exibida como traços (_ _ _ _ _), cada um representando uma letra.</p>
+        <p class="texto-sobre">  2️⃣ O jogador deve clicar em uma letra do teclado virtual ou usar o teclado físico para tentar adivinhar.</p>
+        <p class="texto-sobre">  3️⃣ Se a letra estiver na palavra, ela será revelada na posição correta.</p>
+        <p class="texto-sobre"> 4️⃣ Se a letra não estiver na palavra, um erro será contado.</p>
+        <p class="texto-sobre">5️⃣ O jogo termina de duas formas:</p>
+          
+        <p class="texto-sobre">✅ Vitória: Se você completar a palavra corretamente.</p>
+          
+        <p class="texto-sobre">❌ Derrota: Se você errar 6 vezes antes de completar a palavra.</p>
+          
+        <p>🎮 Como Jogar Passo a Passo: </p>
+        <p class="texto-sobre"> 1️⃣ Iniciar o jogo</p>
+        <p class="texto-sobre"></p>Acesse o jogo e clique no botão "Iniciar Jogo" na tela inicial.</p>
+          
+        <p class="texto-sobre"> 2️⃣ Escolher letras</p>
+        <p class="texto-sobre"> Use o teclado virtual na tela ou seu próprio teclado para selecionar uma letra.</p>
+          
+        <p class="texto-sobre"> 3️⃣ Acompanhar os acertos e erros</p>
+        <p class="texto-sobre">Se a letra estiver correta, ela aparecerá na palavra.</p>
+          
+        <p class="texto-sobre">Se a letra estiver errada, o contador de erros aumentará (máximo de 6).</p>
+          
+        <p class="texto-sobre">4️⃣ Ganhar ou perder</p>
+        <p class="texto-sobre">Se completar a palavra, você vence! 🎉</p>
+          
+        <p class="texto-sobre">Se atingir 6 erros, o jogo termina e a palavra secreta será revelada.</p>
+          
+        <p class="texto-sobre">🔄 Como Reiniciar o Jogo?</p>
+        <p class="texto-sobre">Clique no botão "Reiniciar" no menu superior para tentar novamente.</p>
+          
+        <p class="texto-sobre">💡 Dica: Preste atenção nas letras que já escolheu para evitar erros repetidos!</p>
+          
         <p class="texto-sobre">🔠 Boa sorte e divirta-se jogando Forca! 🚀</p>
+        </p>
       </div>
     </div>
   </div>
 </main>
-
-<!-- definindo escuro parao fundo de tutoriais/créditos -->
-<div class="fundo-preto"></div>
-
-<!-- importando o arquivo JS responsável pela lógica da tela inicial -->
-<script src="../js/inicio.js"></script>
-    <!-- função que envia o usuario para a página da partida ao clicar no botão JOGAR -->
-<script>
-    function iniciarJogo() {
-        window.location.href = "partida.html";
-    }
-</script>
+  <div class="fundo-preto">
+  </div>
+    <script src="../js/inicio.js"></script>
+    <script>
+        function iniciarJogo() {
+            window.location.href = "partida.html";
+        }
+    </script>
 
 </body>
 </html>

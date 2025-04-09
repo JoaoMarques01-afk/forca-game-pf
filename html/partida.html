@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Barra de navegação superior / Nav -->
   <nav class="navbar">
       <ul>
         <li class="inicio">
@@ -19,6 +19,8 @@
           </button>
         </li>
         <li><a class="forca" href="#">Jogo da Forca</a></li>
+          
+          <!-- Botão para reiniciar o jogo -->
         <li class="reiniciar">
           <button class="botao" onclick="reiniciarJogo()">
             <img width="25px" src="../imagens/arrow-repeat.svg" alt="ampulheta">
@@ -27,21 +29,22 @@
       </ul>
     </nav>
 
+    <!-- Container principal do jogo -->
   <div class="container">
     <img src="../imagens/logo-partida.png" class="game-logo" height="80px" alt="Jogo da Forca">
 
-      <!-- Área da Forca -->
+      <!-- Exibe o número de erros cometidos -->
       <div class="erros-container">
           <p>Erros: <span id="erros">0</span>/6</p>
       </div>
 
-      <!-- Palavra Oculta -->
+      <!-- Local onde a palavra é mostrada / letras corretas -->
       <div class="palavra-container" id="palavra-container"></div>
 
-      <!-- Teclado Virtual -->
+      <!-- Teclado virtual interativo -->
       <div class="teclado-container" id="teclado"></div>
   </div>
-
+<!-- código js que controla a lógica do jogo -->
   <script src="../js/partida.js"></script>
 </body>
 </html>

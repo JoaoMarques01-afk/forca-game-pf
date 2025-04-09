@@ -9,16 +9,22 @@
 </head>
 <body>
   <main>
+    <!-- Logo do jogo -->
   <img src="../imagens/logo-partida.png" class="game-logo" height="270px" alt="Fruit Brainiac Showdown">
+    <!-- Menu principal -->
   <div class="menu">
     <div class="home-container">
         <h1>Jogo da Forca</h1>
+        <!-- Botão que inicia o jogo -->
         <button onclick="iniciarJogo()">JOGAR</button>
+        <!-- Botão que mostra o tutorial -->
         <button class="botao" onclick="botaoTutorial()">TUTORIAL</button>
+        <!-- Botão que mostra os créditos -->
         <button class="botao" onclick="botaoCreditos()">CRÉDITOS</button>
     </div>
   </div>
-
+      
+    <!-- Janela de créditos -->
   <div class="creditos">
     <div>
       <button onclick="botaoCreditos()" class="voltar-creditos">
@@ -43,6 +49,7 @@
     </div>
   </div>
 
+    <!-- Janela de tutorial -->
   <div class="tutorial">
     <div>
       <button onclick="botaoTutorial()" class="voltar-tutorial">
@@ -96,6 +103,8 @@
   <div class="fundo-preto">
   </div>
     <script src="../js/inicio.js"></script>
+
+    // Função chamada ao clicar em "Jogar" que redireciona para a tela de jogo
     <script>
         function iniciarJogo() {
             window.location.href = "partida.html";
